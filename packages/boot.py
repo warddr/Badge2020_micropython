@@ -20,6 +20,10 @@ neopixels[3] = (0,0,0)
 neopixels[4] = (0,0,0)
 neopixels.write()
 
+#Turn on backlight on modded hardware version (move R16 to R4)
+pin12=Pin(12, Pin.OUT)
+pin12.value(1)
+
 import settings
 
 if settings.get('BLE-beacon_enabled'):
