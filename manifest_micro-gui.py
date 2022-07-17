@@ -1,5 +1,4 @@
 list = [
-"hardware_setup.py",
 "drivers/boolpalette.py",
 "drivers/st7789/st7789_4bit.py",
 "gui/widgets/meter.py",
