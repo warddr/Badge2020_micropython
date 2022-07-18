@@ -14,6 +14,9 @@ cd ports/esp32
 # link our board file into micropython
 [ ! -e boards/$BOARD ] && ln -s $ROOTDIR/boards/$BOARD boards/$BOARD
 
+# HACK: make git ignore our board dir in the micropython submodule
+echo "ports/esp32/boards/$BOARD" > $ROOTDIR/.git/modules/micropython/info/exclude
+
 echo $PWD
 make BOARD=$BOARD clean
 make BOARD=$BOARD USER_C_MODULES=$ROOTDIR/st7789_mpy/st7789/micropython.cmake FROZEN_MANIFEST="$ROOTDIR/manifest.py"
